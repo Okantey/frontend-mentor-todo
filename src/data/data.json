@@ -1,8 +1,33 @@
 {
   "todos": [
     {
-      "id": "58a82663-6f47-4b0c-b83c-0a5a18c2766b",
-      "name": "Buy food",
+      "id": "c7362020-53ff-4d16-a855-2b41b4144a9c",
+      "name": "Get a new haircut",
+      "isCompleted": false
+    },
+    {
+      "id": "cf51c0a7-3ab1-4566-b56b-accf3ed5bda4",
+      "name": "Get food",
+      "isCompleted": false
+    },
+    {
+      "id": "af6051f3-512e-4b41-bd08-6d7d1938be30",
+      "name": "Wash plates",
+      "isCompleted": false
+    },
+    {
+      "id": "1508ee88-9dac-4684-be68-ff724a3bdacb",
+      "name": "Try food",
+      "isCompleted": false
+    },
+    {
+      "id": "77a69cf9-88ec-4ac7-8779-d1d09faf6202",
+      "name": "hmmm",
+      "isCompleted": false
+    },
+    {
+      "id": "fa25950b-0deb-4bd1-ada2-446eed971467",
+      "name": "nskfnknfknsf",
       "isCompleted": false
     }
   ]
