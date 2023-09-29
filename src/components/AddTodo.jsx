@@ -12,12 +12,13 @@ const AddTodo = ({ todo, setTodo, createTodo }) => {
         placeholder="Create a new task..."
         className="flex-[75%] p-2.5 outline-none rounded-s-md shadow-inner"
         value={todo}
+        required
         onChange={(e) => setTodo(e.target.value)}
       />
       <input
         type="submit"
         value="Add Todo"
-        className="flex-[25%] bg-BrightBlue text-white font-bold text-lg p-2 rounded-e-md hover:shadow-sm hover:shadow-BrightBlue hover:transition-all"
+        className="flex-[25%] bg-BrightBlue text-white font-bold text-lg p-2 rounded-e-md cursor-pointer hover:shadow-sm hover:shadow-BrightBlue hover:transition-all"
       />
     </form>
   );

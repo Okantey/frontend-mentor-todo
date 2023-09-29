@@ -7,7 +7,7 @@ const AllTodos = ({ todos }) => {
       {todos.map((item) => {
         return (
           <div key={item.id}>
-            <div>
+            <div className="flex items-center">
               <input type="checkbox" checked={item.isCompleted} />
               <p>{item.name}</p>
             </div>
