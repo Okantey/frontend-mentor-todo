@@ -1,17 +1,25 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
-const AddTodo = () => {
+const AddTodo = ({ todo, setTodo, createTodo }) => {
   return (
-    <div className="flex justify-between items-center my-4">
+    <form
+      onSubmit={createTodo}
+      className="flex justify-between items-center my-4"
+    >
       <input
         type="text"
         placeholder="Create a new task..."
         className="flex-[75%] p-2.5 outline-none rounded-s-md shadow-inner"
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
       />
-      <button className="flex-[25%] bg-BrightBlue text-white font-bold text-lg p-2 rounded-e-md hover:shadow-sm hover:shadow-BrightBlue hover:transition-all">
-        Add Todo
-      </button>
-    </div>
+      <input
+        type="submit"
+        value="Add Todo"
+        className="flex-[25%] bg-BrightBlue text-white font-bold text-lg p-2 rounded-e-md hover:shadow-sm hover:shadow-BrightBlue hover:transition-all"
+      />
+    </form>
   );
 };
 
