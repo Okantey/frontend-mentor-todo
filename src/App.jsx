@@ -44,7 +44,7 @@ const App = () => {
       <div className="w-screen h-screen flex flex-col overflow-x-hidden">
         <section className="bg-desktop-header-light dark:bg-desktop-header-dark transition-all w-full flex-[35%] object-cover flex justify-center items-center">
           <div className="w-[90%] md:w-[30%] m-auto">
-            <div className=" w-full flex items-center justify-between">
+            <div className=" w-full flex items-center justify-between border">
               <h1 className="text-2xl font-bold text-white tracking-widest">
                 TODO
               </h1>
