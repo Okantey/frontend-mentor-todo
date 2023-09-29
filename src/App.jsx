@@ -3,11 +3,13 @@ import moonIcon from "../images/icon-moon.svg";
 import sunIcon from "../images/icon-sun.svg";
 import { AddTodo, AllTodos } from "./components";
 import { v4 as uuidv4 } from "uuid";
+import axios from "./api/axios";
 
 const App = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const [theme, setTheme] = useState(null);
+  const endPoint = "/todos";
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -25,19 +27,43 @@ const App = () => {
     }
   }, [theme]);
 
+  // useEffect(() => {
+  //   fetchTodos();
+  // }, [todos]);
+
+  // const fetchTodos = async () => {
+  //   try {
+  //     const response = await axios.get(endPoint);
+  //     setTodos(response);
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // };
+
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  const createTodo = (e) => {
+  const createTodo = async (e) => {
     e.preventDefault();
-    const newTodo = {
-      id: uuidv4(),
-      name: todo,
-      isCompleted: false,
-    };
-    setTodos([...todos, newTodo]);
-    setTodo("");
+    try {
+      const newTodo = {
+        id: uuidv4(),
+        name: todo,
+        isCompleted: false,
+      };
+
+      const response = await axios.post(endPoint, JSON.stringify(newTodo), {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(response.data);
+      setTodos([...todos, newTodo]);
+      setTodo("");
+    } catch (error) {
+      console.log(error.message);
+    }
   };
   return (
     <React.Fragment>
@@ -57,9 +83,9 @@ const App = () => {
             <AddTodo todo={todo} setTodo={setTodo} createTodo={createTodo} />
           </div>
         </section>
-        <section className="bg-white transition-colors dark:bg-black dark:transition-colors w-full flex-[65%]">
-          <div className="w-[90%] md:w-[30%] m-auto text-DarkGrayishBlue bg-white dark:bg-black dark:text-DarkGrayishBlueDark rounded-md mt-[-3rem]">
-            <h1 className="text-center py-2">All Tasks</h1>
+        <section className="bg-white transition-colors dark:bg-VeryDarkBlue dark:transition-colors w-full flex-[65%]">
+          <div className="w-[90%] md:w-[30%] m-auto shadow-lg text-DarkGrayishBlue bg-white dark:bg-VeryDarkBlue dark:text-DarkGrayishBlueDark rounded-md mt-[-3rem]">
+            <h1 className="text-center py-3">All Tasks</h1>
             <AllTodos todos={todos} />
           </div>
         </section>

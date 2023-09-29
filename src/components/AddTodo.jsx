@@ -10,7 +10,7 @@ const AddTodo = ({ todo, setTodo, createTodo }) => {
       <input
         type="text"
         placeholder="Create a new task..."
-        className="flex-[75%] p-2.5 outline-none rounded-s-md shadow-inner bg-white text-DarkGrayishBlueDark dark:bg-black dark:text-DarkGrayishBlue transition-all"
+        className="flex-[75%] p-2.5 outline-none rounded-s-md shadow-inner bg-white text-DarkGrayishBlueDark dark:bg-VeryDarkBlue dark:text-DarkGrayishBlue transition-all"
         value={todo}
         required
         onChange={(e) => setTodo(e.target.value)}
