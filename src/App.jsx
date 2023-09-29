@@ -73,7 +73,7 @@ const App = () => {
   return (
     <React.Fragment>
       <div className="w-screen h-screen flex flex-col overflow-x-hidden">
-        <section className="bg-desktop-header-light dark:bg-desktop-header-dark bg-cover bg-no-repeat bg-center transition-all flex-[40%] w-full py-16 object-cover  grid place-items-center sticky top-0 left-0 right-0  ">
+        <section className="bg-desktop-header-light dark:bg-desktop-header-dark bg-cover bg-no-repeat bg-center transition-all flex-[30%] w-full py-16 object-cover  grid place-items-center sticky top-0 left-0 right-0  ">
           <div className="container w-[90%] md:w-[30%] m-auto">
             <div className=" w-full flex items-center justify-between">
               <h1 className="text-2xl font-bold text-white">TODO</h1>
@@ -88,7 +88,7 @@ const App = () => {
             <AddTodo todo={todo} setTodo={setTodo} createTodo={createTodo} />
           </div>
         </section>
-        <section className="bg-VeryLightGray h-screen transition-colors dark:bg-VeryDarkBlue dark:transition-colors w-full flex-[60%] ">
+        <section className="bg-VeryLightGray h-screen transition-colors dark:bg-VeryDarkBlue dark:transition-colors w-full flex-[70%] ">
           <section className="bg-VeryLightGray transition-colors dark:bg-VeryDarkBlue dark:transition-colors ">
             <div className="container py-4 w-[90%] md:w-[30%] m-auto shadow-lg bg-VeryLightGray dark:bg-VeryDarkBlue rounded-md">
               <h1 className="text-center pb-2 text-VeryDarkGrayishBlue dark:text-VeryDarkGrayishBlueDark">
