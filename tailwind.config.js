@@ -36,6 +36,9 @@ export default {
         'moon': "url('./images/icon-moon.svg')",
         'sun': "url('./images/icon-sun.svg')",
       },
+      container: {
+        center: true,
+      }
 
     },
   },
