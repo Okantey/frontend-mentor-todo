@@ -24,7 +24,19 @@ export default {
         VeryDarkGrayishBlueLow: "hsl(237, 14%, 26%)",
 
 
-      }
+      },
+      fontFamily: {
+        josefin: ["Josefin Sans", "sans-serif"]
+      },
+      backgroundImage: {
+        'mobile-header-light': "url('/images/bg-mobile-light.jpg')",
+        'mobile-header-dark': "url('/images/bg-mobile-dark.jpg')",
+        'desktop-header-light': "url('/images/bg-desktop-light.jpg')",
+        'desktop-header-dark': "url('/images/bg-desktop-dark.jpg')",
+        'moon': "url('./images/icon-moon.svg')",
+        'sun': "url('./images/icon-sun.svg')",
+      },
+
     },
   },
   plugins: [],
