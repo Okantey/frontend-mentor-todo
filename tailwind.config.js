@@ -26,7 +26,7 @@ export default {
 
       },
       fontFamily: {
-        josefin: ["Josefin Sans", "sans-serif"]
+        poppins: ["Cabin", "sans-serif"]
       },
       backgroundImage: {
         'mobile-header-light': "url('/images/bg-mobile-light.jpg')",
