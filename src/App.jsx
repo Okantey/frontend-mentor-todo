@@ -102,7 +102,7 @@ const App = () => {
           <section className="bg-VeryLightGray transition-colors dark:bg-VeryDarkBlue dark:transition-colors h-screen overflow-hidden  ">
             {/* content */}
             <div className="container py-4 w-[90%] md:w-[30%] m-auto shadow-lg bg-VeryLightGray dark:bg-VeryDarkBlue rounded-md">
-              <h1 className="text-center pb-2 text-VeryDarkGrayishBlue dark:text-VeryDarkGrayishBlueDark ">
+              <h1 className="text-center pb-2 text-3xl text-VeryDarkGrayishBlue dark:text-VeryDarkGrayishBlueDark ">
                 All Tasks
               </h1>
               <AllTodos
