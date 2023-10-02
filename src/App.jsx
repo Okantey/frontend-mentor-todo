@@ -66,7 +66,6 @@ const App = () => {
       console.log(response.data);
       setTodos([...todos, newTodo]);
       setTodo("");
-      window.location.reload();
     } catch (error) {
       console.log(error.message);
     }
