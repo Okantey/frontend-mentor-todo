@@ -29,10 +29,10 @@ const App = () => {
   }, [theme]);
 
   useEffect(() => {
-    handleTodosfetch();
+    fetchTodos();
   }, [todo]);
 
-  const handleTodosfetch = async () => {
+  const fetchTodos = async () => {
     try {
       const response = await axios.get(endPoint);
       setTodos(response.data);
@@ -49,7 +49,7 @@ const App = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  const handleNewTodo = async (e) => {
+  const createTodo = async (e) => {
     e.preventDefault();
     try {
       const newTodo = {
@@ -66,14 +66,24 @@ const App = () => {
       console.log(response.data);
       setTodos([...todos, newTodo]);
       setTodo("");
+      window.location.reload();
     } catch (error) {
       console.log(error.message);
     }
   };
+
+  const handleCompletedTodos = async (id) => {
+    const checkedTodos = todos.map((item) =>
+      item.id === id ? { ...item, isCompleted: !item.isCompleted } : item
+    );
+
+    setTodos(checkedTodos);
+  };
+
   return (
     <React.Fragment>
       <div className="w-screen h-screen flex flex-col overflow-x-hidden">
-        <section className="bg-desktop-header-light dark:bg-desktop-header-dark bg-cover bg-no-repeat bg-center transition-all flex-[30%] w-full py-16 object-cover  grid place-items-center sticky top-0 left-0 right-0  ">
+        <section className="bg-desktop-header-light dark:bg-desktop-header-dark bg-cover bg-no-repeat bg-center transition-all flex-[30%] w-full py-16 object-cover  grid place-items-center  sticky top-0 left-0 right-0">
           <div className="container w-[90%] md:w-[30%] m-auto">
             <div className=" w-full flex items-center justify-between">
               <h1 className="text-2xl font-bold text-white">TODO</h1>
@@ -85,16 +95,21 @@ const App = () => {
                 title="Theme"
               />
             </div>
-            <AddTodo todo={todo} setTodo={setTodo} createTodo={handleNewTodo} />
+            <AddTodo todo={todo} setTodo={setTodo} createTodo={createTodo} />
           </div>
         </section>
         <section className="bg-VeryLightGray h-screen transition-colors dark:bg-VeryDarkBlue dark:transition-colors w-full flex-[70%] ">
-          <section className="bg-VeryLightGray transition-colors dark:bg-VeryDarkBlue dark:transition-colors ">
+          <section className="bg-VeryLightGray transition-colors dark:bg-VeryDarkBlue dark:transition-colors h-screen overflow-hidden  ">
+            {/* content */}
             <div className="container py-4 w-[90%] md:w-[30%] m-auto shadow-lg bg-VeryLightGray dark:bg-VeryDarkBlue rounded-md">
-              <h1 className="text-center pb-2 text-VeryDarkGrayishBlue dark:text-VeryDarkGrayishBlueDark">
+              <h1 className="text-center pb-2 text-VeryDarkGrayishBlue dark:text-VeryDarkGrayishBlueDark ">
                 All Tasks
               </h1>
-              <AllTodos todos={todos} isLoading={isLoading} />
+              <AllTodos
+                todos={todos}
+                isLoading={isLoading}
+                handleCompletedTodos={handleCompletedTodos}
+              />
             </div>
           </section>
         </section>

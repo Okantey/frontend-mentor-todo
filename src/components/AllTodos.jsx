@@ -4,7 +4,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { CircularProgress } from "@mui/material";
 
-const AllTodos = ({ todos, isLoading }) => {
+const AllTodos = ({ todos, isLoading, handleCompletedTodos }) => {
   return (
     <React.Fragment>
       {isLoading ? (
@@ -18,8 +18,20 @@ const AllTodos = ({ todos, isLoading }) => {
             <div key={item.id}>
               <div className="flex items-center justify-between px-4 py-4 border-y border-DarkGrayishBlueDark">
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded-full border cursor-pointer"></div>
-                  <p className="text-VeryDarkGrayishBlue dark:text-VeryDarkGrayishBlueDark">
+                  <input
+                    title="Mark as Completed"
+                    type="checkbox"
+                    className="w-8 h-8 rounded-full border border-DarkGrayishBlueDark cursor-pointer"
+                    onChange={() => handleCompletedTodos(item.id)}
+                    checked={item.isCompleted}
+                  />
+                  <p
+                    className={`text-VeryDarkGrayishBlue dark:text-VeryDarkGrayishBlueDark ${
+                      item.checked
+                        ? "decoration-gray-100"
+                        : "decoration-current"
+                    }`}
+                  >
                     {item.name}
                   </p>
                 </div>
