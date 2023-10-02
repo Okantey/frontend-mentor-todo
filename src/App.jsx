@@ -29,10 +29,10 @@ const App = () => {
   }, [theme]);
 
   useEffect(() => {
-    fetchTodos();
+    handleTodosfetch();
   }, [todo]);
 
-  const fetchTodos = async () => {
+  const handleTodosfetch = async () => {
     try {
       const response = await axios.get(endPoint);
       setTodos(response.data);
@@ -49,7 +49,7 @@ const App = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  const createTodo = async (e) => {
+  const handleNewTodo = async (e) => {
     e.preventDefault();
     try {
       const newTodo = {
@@ -85,7 +85,7 @@ const App = () => {
                 title="Theme"
               />
             </div>
-            <AddTodo todo={todo} setTodo={setTodo} createTodo={createTodo} />
+            <AddTodo todo={todo} setTodo={setTodo} createTodo={handleNewTodo} />
           </div>
         </section>
         <section className="bg-VeryLightGray h-screen transition-colors dark:bg-VeryDarkBlue dark:transition-colors w-full flex-[70%] ">

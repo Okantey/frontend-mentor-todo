@@ -8,7 +8,8 @@ const AllTodos = ({ todos, isLoading }) => {
   return (
     <React.Fragment>
       {isLoading ? (
-        <div className="w-full text-center">
+        <div className="w-full text-center flex flex-col items-center justify-center gap-2">
+          <span className="text-xl text-BrightBlue">Fetching Todos</span>
           <CircularProgress className="text-BrightBlue" />
         </div>
       ) : (

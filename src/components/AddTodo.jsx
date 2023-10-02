@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const AddTodo = ({ todo, setTodo, createTodo }) => {
+const AddTodo = ({ todo, setTodo, handleNewTodo }) => {
   return (
     <form
-      onSubmit={createTodo}
+      onSubmit={handleNewTodo}
       className="flex justify-between items-center my-4"
     >
       <input
