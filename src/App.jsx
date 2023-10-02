@@ -72,7 +72,7 @@ const App = () => {
     }
   };
 
-  const handleCompletedTodos = async (id) => {
+  const handleCompletedTodos = (id) => {
     const checkedTodos = todos.map((item) =>
       item.id === id ? { ...item, isCompleted: !item.isCompleted } : item
     );
