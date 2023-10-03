@@ -26,11 +26,14 @@ const AllTodos = ({ todos, isLoading, handleCompletedTodos }) => {
                     checked={item.isCompleted}
                   />
                   <p
-                    className={`text-VeryDarkGrayishBlue dark:text-VeryDarkGrayishBlueDark ${
-                      item.checked
-                        ? "decoration-gray-100"
-                        : "decoration-current"
-                    }`}
+                    className={`text-VeryDarkGrayishBlue dark:text-VeryDarkGrayishBlueDark`}
+                    style={
+                      item.isCompleted
+                        ? {
+                            textDecoration: "line-through",
+                          }
+                        : null
+                    }
                   >
                     {item.name}
                   </p>
