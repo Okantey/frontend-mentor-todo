@@ -12,6 +12,7 @@ const AddTodo = ({ todo, setTodo, createTodo }) => {
         placeholder="Create a new task..."
         className="flex-[75%] p-2.5 outline-none rounded-s-md shadow-inner bg-VeryLightGray text-VeryDarkGrayishBlue dark:bg-VeryDarkBlue dark:text-VeryDarkGrayishBlueDark transition-all"
         value={todo}
+        autoFocus
         required
         onChange={(e) => setTodo(e.target.value)}
       />

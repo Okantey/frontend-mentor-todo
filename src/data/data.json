@@ -19,6 +19,16 @@
       "id": "c957c554-f783-41be-8b42-deb224d164fd",
       "name": "Buy food",
       "isCompleted": false
+    },
+    {
+      "id": "d9193544-4417-4b3b-b1f6-1085a6ac9e2c",
+      "name": "Try something new",
+      "isCompleted": false
+    },
+    {
+      "id": "9b03d823-a06b-47e6-8865-eef9ea172944",
+      "name": "hmmm",
+      "isCompleted": false
     }
   ]
 }
